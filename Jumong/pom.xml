@@ -38,7 +38,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>Server</mainClass>
+                            <mainClass>me.elahe.Server</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
