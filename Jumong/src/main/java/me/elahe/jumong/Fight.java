@@ -22,7 +22,7 @@ import java.awt.event.*;
 
 public class Fight extends JFrame implements MouseListener, ItemListener, ActionListener {
 	Jumong j;
-	Pfight panel;
+	FightPanel panel;
 	JFrame frame;
 	JButton sa, ba, fa;
 	JList s;
@@ -35,7 +35,7 @@ public class Fight extends JFrame implements MouseListener, ItemListener, Action
 		super("Live Battle");
 		ok = new JButton("ok");
 		s = new JList(sal);
-		panel = new Pfight(j);
+		panel = new FightPanel(j);
 		add(panel);
 		this.j = j;
 		setVisible(false);

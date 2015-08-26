@@ -13,27 +13,27 @@
  */
 package me.elahe;
 
-import me.elahe.jumong.JumongFrame;
 import me.elahe.jumong.Jumong;
+import me.elahe.jumong.JumongFrame;
 import me.elahe.jumong.Loose;
 
 import javax.swing.*;
 
 public class Server {
 	public Server() {
-		Jumong j = new Jumong();
-		JumongFrame f = new JumongFrame(j);
-		JFrame fa = new JFrame();
-		fa.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Jumong jumong = new Jumong();
+		JumongFrame jumongFrame = new JumongFrame(jumong);
+		JFrame frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		while (true) {
-			if (j.getHitpoints() < 0 || j.getEnergy() < 0) {
-				f.dispose();
-				fa.setVisible(false);
-				fa.setSize(1500, 720);
+			if (jumong.getHitPoints() < 0 || jumong.getEnergy() < 0) {
+				jumongFrame.dispose();
+				frame.setVisible(false);
+				frame.setSize(1500, 720);
 				Loose l = new Loose();
-				fa.add(l);
+				frame.add(l);
 				l.repaint();
-				fa.setVisible(true);
+				frame.setVisible(true);
 				break;
 			}
 		}

@@ -17,6 +17,7 @@
  */
 package me.elahe.jumong;
 
+import me.elahe.Map.Item;
 import me.elahe.Map.smallArrow;
 
 import java.io.Serializable;
@@ -74,19 +75,19 @@ public class Jumong implements Serializable {
 	public HashMap hm;
 	private static int x;
 	private static int y, gold;
-	public ArrayList inventory;
-	private int hitpoints;
+	public ArrayList<Item> inventory;
+	private int hitPoints;
 	private int energy;
 	private int cap;
 
 	public Jumong() {
-		hitpoints = 200;
+		hitPoints = 200;
 		energy = 100;
 		x = y = 0;
 		cap = 50;
 		point = new Point[23][23];
 		hm = new HashMap();
-		inventory = new ArrayList();
+		inventory = new ArrayList<>();
 
 		for (int i = 0; i < 23; i++) {
 			for (int j = 0; j < 23; j++) {
@@ -182,29 +183,23 @@ public class Jumong implements Serializable {
 	/**
 	 * @return the inventory
 	 */
-	public ArrayList getInventory() {
+	public ArrayList<Item> getInventory() {
 		return inventory;
 	}
 
+
 	/**
-	 * @param inventory the inventory to set
+	 * @return the hitPoints
 	 */
-	public void setInventory(ArrayList inventory) {
-		this.inventory = inventory;
+	public int getHitPoints() {
+		return hitPoints;
 	}
 
 	/**
-	 * @return the hitpoints
+	 * @param hitPoints the hitPoints to set
 	 */
-	public int getHitpoints() {
-		return hitpoints;
-	}
-
-	/**
-	 * @param hitpoints the hitpoints to set
-	 */
-	public void setHitpoints(int hitpoints) {
-		this.hitpoints = hitpoints;
+	public void setHitPoints(int hitPoints) {
+		this.hitPoints = hitPoints;
 	}
 
 	/**

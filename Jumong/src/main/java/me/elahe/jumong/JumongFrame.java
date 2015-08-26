@@ -18,11 +18,10 @@ import me.elahe.Map.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.image.BufferedImage;
 import java.util.Iterator;
 import java.util.Random;
 
-public final class JumongFrame extends JFrame implements KeyListener, ActionListener, MouseListener, ItemListener, Runnable {
+public final class JumongFrame extends JFrame implements KeyListener, ActionListener, MouseListener, ItemListener {
 	private static int round;
 
 	/**
@@ -39,7 +38,6 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 		round = aRound;
 	}
 
-	BufferedImage enemy;
 	Panel1 p;
 	Jumong j;
 	JPanel panel2, panel3, panel4;
@@ -721,10 +719,9 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 		f.setLayout(new FlowLayout());
 
 		int shoveln = 0, hawkn = 0, bhpn = 0, shpn = 0, san = 0, ban = 0, fan = 0, sbn = 0, epn = 0, bbn = 0, kn = 0, rn = 0;
-		Iterator it = j.getInventory().iterator();
 
-		while (it.hasNext()) {
-			Item i = (Item) it.next();
+		for (Object o : j.getInventory()) {
+			Item i = (Item) o;
 			if (i.name.equals("Shovel")) {
 				shoveln++;
 
@@ -908,7 +905,7 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 				panel4.repaint();
 				setRound(getRound() + 1);
 				int x = j.getPoint()[Jumong.getX()][Jumong.getY()].enemies.size();
-				j.setHitpoints(j.getHitpoints() - 10 * x);
+				j.setHitPoints(j.getHitPoints() - 10 * x);
 				Jumong.setGold(Jumong.getGold() + j.getPoint()[Jumong.getX()][Jumong.getY()].getGold());
 
 			}
@@ -924,7 +921,7 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 				panel4.repaint();
 				setRound(getRound() + 1);
 				int x = j.getPoint()[Jumong.getX()][Jumong.getY()].enemies.size();
-				j.setHitpoints(j.getHitpoints() - 10 * x);
+				j.setHitPoints(j.getHitPoints() - 10 * x);
 			}
 		} else if (e.getKeyCode() == KeyEvent.VK_UP) {
 			if (Jumong.getY() > 0 && !j.getPoint()[Jumong.getX()][Jumong.getY() - 1].isIswall()) {
@@ -937,7 +934,7 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 				panel4.repaint();
 				setRound(getRound() + 1);
 				int x = j.getPoint()[Jumong.getX()][Jumong.getY()].enemies.size();
-				j.setHitpoints(j.getHitpoints() - 10 * x);
+				j.setHitPoints(j.getHitPoints() - 10 * x);
 			}
 		} else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			if (Jumong.getY() < 22 && !j.getPoint()[Jumong.getX()][Jumong.getY() + 1].isIswall()) {
@@ -950,7 +947,7 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 				panel4.repaint();
 				setRound(getRound() + 1);
 				int x = j.getPoint()[Jumong.getX()][Jumong.getY()].enemies.size();
-				j.setHitpoints(j.getHitpoints() - 10 * x);
+				j.setHitPoints(j.getHitPoints() - 10 * x);
 			}
 		}
 
@@ -965,7 +962,6 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 	}
 
 	//-----------------------------------------------commands----------------------------------------
-//
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -1200,7 +1196,7 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 
 		}
 		if (e.getSource() == status) {
-			JOptionPane.showMessageDialog(null, "you have " + j.getEnergy() + " and " + j.getHitpoints() + "hit points");
+			JOptionPane.showMessageDialog(null, "you have " + j.getEnergy() + " and " + j.getHitPoints() + "hit points");
 			setRound(getRound() + 1);
 		}
 		if (e.getSource() == co) {
@@ -1263,11 +1259,6 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 
 	@Override
 	public void itemStateChanged(ItemEvent e) {
-
-	}
-
-	@Override
-	public void run() {
 
 	}
 }

@@ -210,14 +210,14 @@ public class Panel1 extends JPanel {
 	}
 
 	/**
-	 * @return the j
+	 * @return the jumong
 	 */
 	public Jumong getJ() {
 		return j;
 	}
 
 	/**
-	 * @param j the j to set
+	 * @param j the jumong to set
 	 */
 	public void setJ(Jumong j) {
 		this.j = j;

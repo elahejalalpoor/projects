@@ -26,21 +26,21 @@ import java.util.logging.Logger;
  * @author Elahe Jalalpoor
  */
 public class Saver implements Serializable {
-	OutputStream output;
+	private OutputStream output;
 	private Point[][] point;
 	private ArrayList inventory;
 	int x, y;
-	Jumong j;
+	Jumong jumong;
 
-	public Saver(Jumong j) {
-		this.j = j;
+	public Saver(Jumong jumong) {
+		this.jumong = jumong;
 		try {
 			output = new FileOutputStream("save.txt");
 		} catch (FileNotFoundException ex) {
 			Logger.getLogger(Saver.class.getName()).log(Level.SEVERE, null, ex);
 		}
-		this.point = j.getPoint();
-		this.inventory = j.getInventory();
+		this.point = jumong.getPoint();
+		this.inventory = jumong.getInventory();
 		this.x = Jumong.getX();
 		this.y = Jumong.getY();
 
@@ -49,9 +49,9 @@ public class Saver implements Serializable {
 
 	public void writeMyObject(Object obj) {
 		for (int i = 0; i < 23; i++) {
-			for (int ja = 0; ja < 23; ja++) {
+			for (int j = 0; j < 23; j++) {
 				try {
-					output.write(point[i][ja].enemies.size());
+					output.write(point[i][j].enemies.size());
 				} catch (IOException ex) {
 					Logger.getLogger(Saver.class.getName()).log(Level.SEVERE, null, ex);
 				}
@@ -87,7 +87,7 @@ public class Saver implements Serializable {
 	 */
 	public void setPoint() {
 
-		point = j.getPoint();
+		point = jumong.getPoint();
 	}
 
 	/**
@@ -101,6 +101,6 @@ public class Saver implements Serializable {
 	 * @param Inventory the Inventory to set
 	 */
 	public void setInventory() {
-		inventory = j.getInventory();
+		inventory = jumong.getInventory();
 	}
 }
