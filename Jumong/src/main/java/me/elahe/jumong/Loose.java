@@ -1,0 +1,45 @@
+/*
+ * In The Name Of God
+ * ========================================
+ * [] File Name : Loose.java
+ *
+ * [] Creation Date : 26-08-2015
+ *
+ * [] Created By : Elahe Jalalpour (el.jalalpour@gmail.com)
+ * =======================================
+*/
+/**
+ * @author Elahe Jalalpour
+ */
+package me.elahe.jumong;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Loose extends JPanel {
+	BufferedImage gameOver;
+
+	public Loose() {
+		try {
+			gameOver = ImageIO.read(new File("why.jpg"));
+		} catch (IOException ex) {
+			Logger.getLogger(Loose.class.getName()).log(Level.SEVERE, null, ex);
+		}
+
+	}
+
+	@Override
+
+	public void paint(Graphics g) {
+//        super.paint(g);
+		g.drawImage(gameOver, 0, 0, 400, 500, null);
+	}
+
+
+}
