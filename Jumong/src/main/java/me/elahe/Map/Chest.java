@@ -45,20 +45,20 @@ public class Chest extends Item {
 	}
 
 	@Override
-	public void use(Jumong j) {
+	public void use(Jumong jumong) {
 		switch (number) {
 			case 0:
-				j.getPoint()[Jumong.getX()][Jumong.getY()].items.add(new Shovel());
+				jumong.getPoint()[Jumong.getX()][Jumong.getY()].items.add(new Shovel());
 				break;
 			case 1:
-				j.getPoint()[Jumong.getX()][Jumong.getY()].items.add(new energyPotion());
-				j.getPoint()[Jumong.getX()][Jumong.getY()].items.add(new fireArrow());
+				jumong.getPoint()[Jumong.getX()][Jumong.getY()].items.add(new energyPotion());
+				jumong.getPoint()[Jumong.getX()][Jumong.getY()].items.add(new fireArrow());
 				break;
 			case 2:
-				j.getPoint()[Jumong.getX()][Jumong.getY()].items.add(new stoneBreaker());
+				jumong.getPoint()[Jumong.getX()][Jumong.getY()].items.add(new stoneBreaker());
 				break;
 			case 3:
-				j.getPoint()[Jumong.getX()][Jumong.getY()].items.add(new reviveScroll());
+				jumong.getPoint()[Jumong.getX()][Jumong.getY()].items.add(new reviveScroll());
 				break;
 		}
 	}

@@ -22,7 +22,7 @@ public class bigBag extends Item {
 	}
 
 	@Override
-	public void use(Jumong j) {
-		j.setCap(j.getCap() + 10);
+	public void use(Jumong jumong) {
+		jumong.setCap(jumong.getCap() + 10);
 	}
 }

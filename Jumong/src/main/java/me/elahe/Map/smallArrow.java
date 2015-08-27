@@ -21,8 +21,8 @@ public class smallArrow extends Item {
 	}
 
 	@Override
-	public void use(Jumong j) {
-		int w = j.getPoint()[Jumong.getX()][Jumong.getY()].enemies.size();
-		j.getPoint()[Jumong.getX()][Jumong.getY()].enemies.remove(w - 1);
+	public void use(Jumong jumong) {
+		int w = jumong.getPoint()[Jumong.getX()][Jumong.getY()].enemies.size();
+		jumong.getPoint()[Jumong.getX()][Jumong.getY()].enemies.remove(w - 1);
 	}
 }

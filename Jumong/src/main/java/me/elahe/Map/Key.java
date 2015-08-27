@@ -50,7 +50,7 @@ public class Key extends Item{
     }
     }
     @Override
-    public void use(Jumong j)
+    public void use(Jumong jumong)
     {
         
     }

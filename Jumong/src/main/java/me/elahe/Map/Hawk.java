@@ -22,7 +22,7 @@ public class Hawk extends Item {
 	}
 
 	@Override
-	public void use(Jumong j) {
+	public void use(Jumong jumong) {
 
 	}
 }

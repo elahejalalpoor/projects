@@ -22,7 +22,7 @@ public class reviveScroll extends Item {
 	}
 
 	@Override
-	public void use(Jumong j) {
-		j.setHitPoints(j.getHitPoints() + 50);
+	public void use(Jumong jumong) {
+		jumong.setHitPoints(jumong.getHitPoints() + 50);
 	}
 }

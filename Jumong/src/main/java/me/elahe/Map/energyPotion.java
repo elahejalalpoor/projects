@@ -29,8 +29,8 @@ public class energyPotion extends Item{
         name ="energyPotion";
     }
     @Override
-    public void use(Jumong j)
+    public void use(Jumong jumong)
     {
-        j.setEnergy(j.getEnergy() + 10);
+        jumong.setEnergy(jumong.getEnergy() + 10);
     }
 }

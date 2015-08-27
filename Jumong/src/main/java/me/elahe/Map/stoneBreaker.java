@@ -18,24 +18,23 @@ import me.elahe.jumong.Jumong;
 public class stoneBreaker extends Item {
 
 	public stoneBreaker() {
-
 		name = "stoneBreaker";
 	}
 
 	@Override
-	public void use(Jumong j) {
-		if (j.getPoint()[Jumong.getX() + 1][Jumong.getY()].isIswall()) {
-			j.getPoint()[Jumong.getX() + 1][Jumong.getY()].setIswall(false);
+	public void use(Jumong jumong) {
+		if (jumong.getPoint()[Jumong.getX() + 1][Jumong.getY()].isIswall()) {
+			jumong.getPoint()[Jumong.getX() + 1][Jumong.getY()].setIswall(false);
 
 		}
-		if (j.getPoint()[Jumong.getX() - 1][Jumong.getY()].isIswall()) {
-			j.getPoint()[Jumong.getX() - 1][Jumong.getY()].setIswall(false);
+		if (jumong.getPoint()[Jumong.getX() - 1][Jumong.getY()].isIswall()) {
+			jumong.getPoint()[Jumong.getX() - 1][Jumong.getY()].setIswall(false);
 		}
-		if (j.getPoint()[Jumong.getX()][Jumong.getY() - 1].isIswall()) {
-			j.getPoint()[Jumong.getX()][Jumong.getY() - 1].setIswall(false);
+		if (jumong.getPoint()[Jumong.getX()][Jumong.getY() - 1].isIswall()) {
+			jumong.getPoint()[Jumong.getX()][Jumong.getY() - 1].setIswall(false);
 		}
-		if (j.getPoint()[Jumong.getX()][Jumong.getY() + 1].isIswall()) {
-			j.getPoint()[Jumong.getX()][Jumong.getY() + 1].setIswall(false);
+		if (jumong.getPoint()[Jumong.getX()][Jumong.getY() + 1].isIswall()) {
+			jumong.getPoint()[Jumong.getX()][Jumong.getY() + 1].setIswall(false);
 		}
 	}
 

@@ -28,7 +28,7 @@ public class Shovel extends Item {
 	}
 
 	@Override
-	public void use(Jumong j) {
+	public void use(Jumong jumong) {
 
 	}
 }

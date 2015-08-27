@@ -21,7 +21,7 @@ public class fireArrow extends Item {
 	}
 
 	@Override
-	public void use(Jumong j) {
+	public void use(Jumong jumong) {
 //      Iterator it=j.getPoint()[Jumong.getX()][Jumong.getY()].enemies.iterator();
 //        while(it.hasNext())
 //        {
@@ -31,13 +31,13 @@ public class fireArrow extends Item {
 //        }
 
 		if (Jumong.getX() > 0 && Jumong.getX() < 22 && Jumong.getY() > 0 && Jumong.getY() < 22) {
-			j.getPoint()[Jumong.getX() + 1][Jumong.getY()].setIswall(false);
+			jumong.getPoint()[Jumong.getX() + 1][Jumong.getY()].setIswall(false);
 
-			j.getPoint()[Jumong.getX() - 1][Jumong.getY()].setIswall(false);
+			jumong.getPoint()[Jumong.getX() - 1][Jumong.getY()].setIswall(false);
 
-			j.getPoint()[Jumong.getX()][Jumong.getY() - 1].setIswall(false);
+			jumong.getPoint()[Jumong.getX()][Jumong.getY() - 1].setIswall(false);
 
-			j.getPoint()[Jumong.getX()][Jumong.getY() + 1].setIswall(false);
+			jumong.getPoint()[Jumong.getX()][Jumong.getY() + 1].setIswall(false);
 		}
 	}
 }

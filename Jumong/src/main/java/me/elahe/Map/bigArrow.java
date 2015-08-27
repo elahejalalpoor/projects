@@ -24,8 +24,8 @@ public class bigArrow extends Item {
 	}
 
 	@Override
-	public void use(Jumong j) {
-		Iterator it = j.getPoint()[Jumong.getX()][Jumong.getY()].enemies.iterator();
+	public void use(Jumong jumong) {
+		Iterator it = jumong.getPoint()[Jumong.getX()][Jumong.getY()].enemies.iterator();
 		while (it.hasNext()) {
 			it.next();
 			it.remove();

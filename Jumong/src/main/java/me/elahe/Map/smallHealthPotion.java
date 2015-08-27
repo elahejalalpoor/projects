@@ -21,7 +21,7 @@ public class smallHealthPotion extends Item {
 	}
 
 	@Override
-	public void use(Jumong j) {
-		j.setHitPoints(j.getHitPoints() + 20);
+	public void use(Jumong jumong) {
+		jumong.setHitPoints(jumong.getHitPoints() + 20);
 	}
 }
