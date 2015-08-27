@@ -33,12 +33,12 @@ public class FightPanel extends JPanel {
 		try {
 			enemy = ImageIO.read(ClassLoader.getSystemResourceAsStream("enemy.jpg"));
 		} catch (IOException ex) {
-			Logger.getLogger(Panel2.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(FightPanel.class.getName()).log(Level.SEVERE, null, ex);
 		}
 		try {
 			hero = ImageIO.read(ClassLoader.getSystemResourceAsStream("hero.jpg"));
 		} catch (IOException ex) {
-			Logger.getLogger(Panel1.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(FightPanel.class.getName()).log(Level.SEVERE, null, ex);
 		}
 		setSize(600, 600);
 
