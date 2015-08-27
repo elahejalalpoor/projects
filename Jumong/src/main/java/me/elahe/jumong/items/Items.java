@@ -11,7 +11,7 @@
 /**
  * @author Elahe Jalalpour
  */
-package me.elahe.Map;
+package me.elahe.jumong.items;
 
 import me.elahe.jumong.Enemy;
 

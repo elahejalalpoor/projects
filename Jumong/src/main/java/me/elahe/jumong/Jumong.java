@@ -17,8 +17,8 @@
  */
 package me.elahe.jumong;
 
-import me.elahe.Map.Item;
-import me.elahe.Map.smallArrow;
+import me.elahe.jumong.items.Item;
+import me.elahe.jumong.items.smallArrow;
 
 import java.io.Serializable;
 import java.util.ArrayList;

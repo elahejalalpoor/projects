@@ -1,7 +1,7 @@
 /*
  * In The Name Of God
  * ========================================
- * [] File Name : Item.java
+ * [] File Name : bigHealthPotion.java
  *
  * [] Creation Date : 26-08-2015
  *
@@ -11,14 +11,18 @@
 /**
  * @author Elahe Jalalpour
  */
-package me.elahe.Map;
+package me.elahe.jumong.items;
 
 import me.elahe.jumong.Jumong;
 
-public abstract class Item {
-	public String name;
-	public int match = 0;
+public class bigHealthPotion extends Item {
+	public bigHealthPotion() {
+		name = "bigHealthPotion";
+	}
 
-	public abstract void use(Jumong jumong);
+	@Override
+	public void use(Jumong jumong) {
+		jumong.setHitPoints(jumong.getHitPoints() + 50);
+	}
 
 }

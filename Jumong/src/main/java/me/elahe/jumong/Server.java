@@ -11,11 +11,7 @@
 /**
  * @author Elahe Jalalpour
  */
-package me.elahe;
-
-import me.elahe.jumong.Jumong;
-import me.elahe.jumong.JumongFrame;
-import me.elahe.jumong.Loose;
+package me.elahe.jumong;
 
 import javax.swing.*;
 

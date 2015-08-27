@@ -1,7 +1,7 @@
 /*
  * In The Name Of God
  * ========================================
- * [] File Name : bigArrow.java
+ * [] File Name : smallHealthPotion.java
  *
  * [] Creation Date : 26-08-2015
  *
@@ -11,25 +11,17 @@
 /**
  * @author Elahe Jalalpour
  */
-package me.elahe.Map;
+package me.elahe.jumong.items;
 
 import me.elahe.jumong.Jumong;
 
-import java.util.Iterator;
-
-public class bigArrow extends Item {
-
-	public bigArrow() {
-		name = "bigArrow";
+public class smallHealthPotion extends Item {
+	public smallHealthPotion() {
+		name = "smallHealthPotion";
 	}
 
 	@Override
 	public void use(Jumong jumong) {
-		Iterator it = jumong.getPoint()[Jumong.getX()][Jumong.getY()].enemies.iterator();
-		while (it.hasNext()) {
-			it.next();
-			it.remove();
-
-		}
+		jumong.setHitPoints(jumong.getHitPoints() + 20);
 	}
 }

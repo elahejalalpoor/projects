@@ -13,7 +13,7 @@
  */
 package me.elahe.jumong;
 
-import me.elahe.Map.*;
+import me.elahe.jumong.items.*;
 
 import javax.swing.*;
 import java.awt.*;

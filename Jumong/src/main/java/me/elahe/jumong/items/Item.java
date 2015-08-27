@@ -1,7 +1,7 @@
 /*
  * In The Name Of God
  * ========================================
- * [] File Name : Hawk.java
+ * [] File Name : Item.java
  *
  * [] Creation Date : 26-08-2015
  *
@@ -11,18 +11,14 @@
 /**
  * @author Elahe Jalalpour
  */
-package me.elahe.Map;
+package me.elahe.jumong.items;
 
 import me.elahe.jumong.Jumong;
 
-public class Hawk extends Item {
+public abstract class Item {
+	public String name;
+	public int match = 0;
 
-	public Hawk() {
-		name = "Hawk";
-	}
+	public abstract void use(Jumong jumong);
 
-	@Override
-	public void use(Jumong jumong) {
-
-	}
 }

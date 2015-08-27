@@ -1,7 +1,7 @@
 /*
  * In The Name Of God
  * ========================================
- * [] File Name : bigBag.java
+ * [] File Name : Hawk.java
  *
  * [] Creation Date : 26-08-2015
  *
@@ -11,18 +11,18 @@
 /**
  * @author Elahe Jalalpour
  */
-package me.elahe.Map;
+package me.elahe.jumong.items;
 
 import me.elahe.jumong.Jumong;
 
-public class bigBag extends Item {
+public class Hawk extends Item {
 
-	public bigBag() {
-		name = "bigBag";
+	public Hawk() {
+		name = "Hawk";
 	}
 
 	@Override
 	public void use(Jumong jumong) {
-		jumong.setCap(jumong.getCap() + 10);
+
 	}
 }

@@ -13,7 +13,7 @@
  */
 package me.elahe.jumong;
 
-import me.elahe.Map.Item;
+import me.elahe.jumong.items.Item;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,20 +21,18 @@ import java.awt.Point;
 import java.awt.event.*;
 
 public class Fight extends JFrame implements MouseListener, ItemListener, ActionListener {
-	Jumong j;
-	FightPanel panel;
-	JFrame frame;
-	JButton sa, ba, fa;
-	JList s;
-	int select;
-	JButton ok;
-	public String sal[] = {"smallArrow", "bigArrow", "fireArrow"};
-	private Point p;
+	private Jumong j;
+	private FightPanel panel;
+	private JFrame frame;
+	private JList<String> s;
+	private int select;
+	private JButton ok;
+	public String weaponsName[] = {"smallArrow", "bigArrow", "fireArrow"};
 
 	public Fight(Jumong j) {
 		super("Live Battle");
 		ok = new JButton("ok");
-		s = new JList(sal);
+		s = new JList<>(weaponsName);
 		panel = new FightPanel(j);
 		add(panel);
 		this.j = j;
@@ -44,12 +42,12 @@ public class Fight extends JFrame implements MouseListener, ItemListener, Action
 		panel.repaint();
 		addMouseListener(this);
 		ok.addActionListener(this);
-		doit();
+		doIt();
 		setVisible(true);
 
 	}
 
-	private void doit() {
+	private void doIt() {
 		for (int x = j.getPoint()[Jumong.getX()][Jumong.getY()].enemies.size() - 1; x >= 0; x--) {
 			Enemy e = (Enemy) j.getPoint()[Jumong.getX()][Jumong.getY()].enemies.get(x);
 			e.setX(x);
@@ -58,7 +56,7 @@ public class Fight extends JFrame implements MouseListener, ItemListener, Action
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		p = e.getPoint();
+		Point p = e.getPoint();
 		int x = j.getPoint()[Jumong.getX()][Jumong.getY()].enemies.size();
 		if (x == 1) {
 			if (p.x > 200 && p.x < 300 && p.y > 80 && p.y < 180) {
@@ -171,7 +169,7 @@ public class Fight extends JFrame implements MouseListener, ItemListener, Action
 						j.getInventory().remove(index);
 						panel.repaint();
 						num++;
-						doit();
+						doIt();
 						break;
 					}
 				}
@@ -187,7 +185,7 @@ public class Fight extends JFrame implements MouseListener, ItemListener, Action
 						num++;
 						j.getInventory().remove(index);
 						panel.repaint();
-						doit();
+						doIt();
 						break;
 					}
 				}
@@ -217,7 +215,7 @@ public class Fight extends JFrame implements MouseListener, ItemListener, Action
 						num++;
 						j.getInventory().remove(index);
 						panel.repaint();
-						doit();
+						doIt();
 						break;
 					}
 				}

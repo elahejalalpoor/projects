@@ -1,7 +1,7 @@
 /*
  * In The Name Of God
  * ========================================
- * [] File Name : reviveScroll.java
+ * [] File Name : bigBag.java
  *
  * [] Creation Date : 26-08-2015
  *
@@ -11,18 +11,18 @@
 /**
  * @author Elahe Jalalpour
  */
-package me.elahe.Map;
+package me.elahe.jumong.items;
 
 import me.elahe.jumong.Jumong;
 
-public class reviveScroll extends Item {
+public class bigBag extends Item {
 
-	public reviveScroll() {
-		name = "reviveScroll";
+	public bigBag() {
+		name = "bigBag";
 	}
 
 	@Override
 	public void use(Jumong jumong) {
-		jumong.setHitPoints(jumong.getHitPoints() + 50);
+		jumong.setCap(jumong.getCap() + 10);
 	}
 }

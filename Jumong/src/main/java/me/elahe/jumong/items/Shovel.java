@@ -1,7 +1,7 @@
 /*
  * In The Name Of God
  * ========================================
- * [] File Name : smallArrow.java
+ * [] File Name : Shovel.java
  *
  * [] Creation Date : 26-08-2015
  *
@@ -11,18 +11,24 @@
 /**
  * @author Elahe Jalalpour
  */
-package me.elahe.Map;
+package me.elahe.jumong.items;
 
 import me.elahe.jumong.Jumong;
 
-public class smallArrow extends Item {
-	public smallArrow() {
-		name = "smallArrow";
+import javax.swing.*;
+import java.awt.*;
+
+public class Shovel extends Item {
+	JFrame f;
+
+	public Shovel() {
+		name = "Shovel";
+		f = new JFrame();
+		f.setLayout(new FlowLayout());
 	}
 
 	@Override
 	public void use(Jumong jumong) {
-		int w = jumong.getPoint()[Jumong.getX()][Jumong.getY()].enemies.size();
-		jumong.getPoint()[Jumong.getX()][Jumong.getY()].enemies.remove(w - 1);
+
 	}
 }

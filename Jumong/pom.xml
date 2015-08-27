@@ -47,7 +47,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>me.elahe.Server</mainClass>
+                            <mainClass>me.elahe.jumong.Server</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
