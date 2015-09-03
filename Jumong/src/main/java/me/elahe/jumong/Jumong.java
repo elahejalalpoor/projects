@@ -11,10 +11,6 @@
 /**
  * @author Elahe Jalalpour
  */
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package me.elahe.jumong;
 
 import me.elahe.jumong.items.Item;
@@ -24,9 +20,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * @elahe
- */
 public class Jumong implements Serializable {
 
 	/**
@@ -94,6 +87,8 @@ public class Jumong implements Serializable {
 				point[i][j] = new Point(i, j);
 			}
 		}
+
+		/* start of map building :) */
 		point[2][3].setWall(true);
 		point[2][4].setWall(true);
 		point[3][4].setWall(true);
@@ -162,7 +157,10 @@ public class Jumong implements Serializable {
 		point[20][8].setWall(true);
 		point[21][8].setWall(true);
 		point[21][11].setWall(true);
+
 		point[16][13].destination = true;
+		/* end of map building :) */
+
 		for (int i = 0; i < 23; i++) {
 			for (int j = 0; j < 23; j++) {
 				if (!point[i][j].isWall()) {

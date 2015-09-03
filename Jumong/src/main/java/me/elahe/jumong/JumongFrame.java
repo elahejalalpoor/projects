@@ -509,7 +509,6 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 	public void smartEnemies() {
 		double hey;
 		Random rand = new Random();
-		int number = rand.nextInt(2);
 		int i = 0, ja = 0, ma = 0, n = 0;
 
 		for (int x = 1; x < 22; x++) {
@@ -601,7 +600,6 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 					}
 				}
 			}
-
 		}
 		setPanel5();
 		panel4.repaint();
