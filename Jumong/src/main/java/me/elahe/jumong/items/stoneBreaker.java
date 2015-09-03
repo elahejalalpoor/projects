@@ -23,18 +23,18 @@ public class stoneBreaker extends Item {
 
 	@Override
 	public void use(Jumong jumong) {
-		if (jumong.getPoint()[Jumong.getX() + 1][Jumong.getY()].isIswall()) {
-			jumong.getPoint()[Jumong.getX() + 1][Jumong.getY()].setIswall(false);
+		if (jumong.getPoint()[Jumong.getX() + 1][Jumong.getY()].isWall()) {
+			jumong.getPoint()[Jumong.getX() + 1][Jumong.getY()].setWall(false);
 
 		}
-		if (jumong.getPoint()[Jumong.getX() - 1][Jumong.getY()].isIswall()) {
-			jumong.getPoint()[Jumong.getX() - 1][Jumong.getY()].setIswall(false);
+		if (jumong.getPoint()[Jumong.getX() - 1][Jumong.getY()].isWall()) {
+			jumong.getPoint()[Jumong.getX() - 1][Jumong.getY()].setWall(false);
 		}
-		if (jumong.getPoint()[Jumong.getX()][Jumong.getY() - 1].isIswall()) {
-			jumong.getPoint()[Jumong.getX()][Jumong.getY() - 1].setIswall(false);
+		if (jumong.getPoint()[Jumong.getX()][Jumong.getY() - 1].isWall()) {
+			jumong.getPoint()[Jumong.getX()][Jumong.getY() - 1].setWall(false);
 		}
-		if (jumong.getPoint()[Jumong.getX()][Jumong.getY() + 1].isIswall()) {
-			jumong.getPoint()[Jumong.getX()][Jumong.getY() + 1].setIswall(false);
+		if (jumong.getPoint()[Jumong.getX()][Jumong.getY() + 1].isWall()) {
+			jumong.getPoint()[Jumong.getX()][Jumong.getY() + 1].setWall(false);
 		}
 	}
 

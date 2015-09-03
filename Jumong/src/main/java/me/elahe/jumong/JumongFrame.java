@@ -46,12 +46,11 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 	JButton inventory, unlock, status, live, co;
 	JRadioButton lhawk, lshovel, lbhp, lshp, lep, lfa, lba, lsb, lbb, lsa, lk, lc, lr;
 	JLabel t, gold;
-	BorderLayout border;
 	JButton drop, use, save, load;
 	ButtonGroup rg;
 	JFrame f;
-	int m, enemynum = 0;
-	public JComboBox salam, sal;
+	int m, enemyNumber = 0;
+	public JComboBox<String> salam, sal;
 	public String s[] = {"Items", "smallHealthPotion", "bigHealthPotion", "Hawk", "Shovel", "energyPotion", "reviveScroll", "bigBag"};
 	public String saa[] = {"Items", "smallHealthPotion", "bigHealthPotion", "Hawk", "Shovel", "energyPotion", "reviveScroll", "bigBag", "smallArrow", "bigArrow", "fireArrow", "Key"};
 
@@ -59,8 +58,8 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 
 		setVisible(false);
 		j = ja;
-		salam = new JComboBox(s);
-		sal = new JComboBox(saa);
+		salam = new JComboBox<>(s);
+		sal = new JComboBox<>(saa);
 		salam.addItemListener(
 			new ItemListener() {
 
@@ -68,9 +67,6 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 				public void itemStateChanged(ItemEvent e) {
 					int num = 0;
 					if (e.getStateChange() == ItemEvent.SELECTED) {
-						if (salam.getSelectedIndex() == 0) {
-
-						}
 						if (salam.getSelectedIndex() == 1) {
 
 							Iterator it = j.inventory.iterator();
@@ -120,7 +116,7 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 							}
 						}
 						if (salam.getSelectedIndex() == 4) {
-							String sx = null, sy = null;
+							String sx, sy;
 							int x, y;
 							Iterator it = j.inventory.iterator();
 							while (it.hasNext()) {
@@ -128,11 +124,11 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 								if (i.name.equals("Shovel")) {
 									num++;
 									sx = JOptionPane.showInputDialog("enter the x of your destination");
-									sy = JOptionPane.showInputDialog("enter the y of your destination", sy);
+									sy = JOptionPane.showInputDialog("enter the y of your destination");
 									x = Integer.parseInt(sx);
 									y = Integer.parseInt(sy);
 
-									if (!j.getPoint()[x][y].isIswall()) {
+									if (!j.getPoint()[x][y].isWall()) {
 										Jumong.setX(x);
 										Jumong.setY(y);
 										p.repaint();
@@ -209,9 +205,6 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 				public void itemStateChanged(ItemEvent e) {
 					int num = 0;
 					if (e.getStateChange() == ItemEvent.SELECTED) {
-						if (sal.getSelectedIndex() == 0) {
-
-						}
 						if (sal.getSelectedIndex() == 1) {
 
 							Iterator it = j.inventory.iterator();
@@ -262,8 +255,6 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 							}
 						}
 						if (sal.getSelectedIndex() == 4) {
-							String sx = null, sy = null;
-							int x, y;
 							Iterator it = j.inventory.iterator();
 							while (it.hasNext()) {
 								Item i = (Item) it.next();
@@ -575,35 +566,35 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 							n = 1;
 						}
 
-						if (!j.getPoint()[x + i][y + ja].isIswall() && j.getPoint()[x + i][y + ja].enemies.size() < 3) {
+						if (!j.getPoint()[x + i][y + ja].isWall() && j.getPoint()[x + i][y + ja].enemies.size() < 3) {
 							j.getPoint()[x + i][y + ja].enemies.add(new Enemy());
-						} else if (!j.getPoint()[x + ma][y + n].isIswall() && j.getPoint()[x + ma][y + n].enemies.size() < 3) {
+						} else if (!j.getPoint()[x + ma][y + n].isWall() && j.getPoint()[x + ma][y + n].enemies.size() < 3) {
 							j.getPoint()[x + ma][y + n].enemies.add(new Enemy());
-						} else if (!j.getPoint()[x - i][y - ja].isIswall() && j.getPoint()[x - i][y - ja].enemies.size() < 3) {
+						} else if (!j.getPoint()[x - i][y - ja].isWall() && j.getPoint()[x - i][y - ja].enemies.size() < 3) {
 							j.getPoint()[x - i][y - ja].enemies.add(new Enemy());
-						} else if (!j.getPoint()[x - ma][y - n].isIswall() && j.getPoint()[x - ma][y - n].enemies.size() < 3) {
+						} else if (!j.getPoint()[x - ma][y - n].isWall() && j.getPoint()[x - ma][y - n].enemies.size() < 3) {
 							j.getPoint()[x - ma][y - n].enemies.add(new Enemy());
 						}
 						j.getPoint()[x][y].enemies.remove(index);
 					}
 					if (x - Jumong.getX() == 0) {
 						if (Jumong.getY() - y > 0) {
-							if (!j.getPoint()[x][y + 1].isIswall() && j.getPoint()[x][y + 1].enemies.size() < 3) {
+							if (!j.getPoint()[x][y + 1].isWall() && j.getPoint()[x][y + 1].enemies.size() < 3) {
 								j.getPoint()[x][y + 1].enemies.add(new Enemy());
 							}
 						} else if (Jumong.getY() - y < 0) {
-							if (!j.getPoint()[x][y - 1].isIswall() && j.getPoint()[x][y - 1].enemies.size() < 3) {
+							if (!j.getPoint()[x][y - 1].isWall() && j.getPoint()[x][y - 1].enemies.size() < 3) {
 								j.getPoint()[x][y - 1].enemies.add(new Enemy());
 							}
 						}
 					}
 					if (y - Jumong.getY() == 0) {
 						if (Jumong.getX() - x > 0) {
-							if (!j.getPoint()[x + 1][y].isIswall() && j.getPoint()[x + 1][y].enemies.size() < 3) {
+							if (!j.getPoint()[x + 1][y].isWall() && j.getPoint()[x + 1][y].enemies.size() < 3) {
 								j.getPoint()[x + 1][y].enemies.add(new Enemy());
 							}
 						} else if (Jumong.getX() - x < 0) {
-							if (!j.getPoint()[x - 1][y].isIswall() && j.getPoint()[x - 1][y].enemies.size() < 3) {
+							if (!j.getPoint()[x - 1][y].isWall() && j.getPoint()[x - 1][y].enemies.size() < 3) {
 								j.getPoint()[x - 1][y].enemies.add(new Enemy());
 							}
 						}
@@ -874,7 +865,7 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 		} else if (number > 0 && num < number) {
 			panel5.add(live);
 		}
-		enemynum = number;
+		enemyNumber = number;
 		t.setSize(500, 500);
 		gold.setText("gold : " + j.getPoint()[Jumong.getX()][Jumong.getY()].getGold());
 		t.setText("enemies: " + number);
@@ -894,7 +885,7 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			if (Jumong.getX() > 0 && !j.getPoint()[Jumong.getX() - 1][Jumong.getY()].isIswall()) {
+			if (Jumong.getX() > 0 && !j.getPoint()[Jumong.getX() - 1][Jumong.getY()].isWall()) {
 
 				Jumong.setX(Jumong.getX() - 1);
 				p.repaint();
@@ -911,7 +902,7 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 			}
 
 		} else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			if (Jumong.getX() < 22 && !j.getPoint()[Jumong.getX() + 1][Jumong.getY()].isIswall()) {
+			if (Jumong.getX() < 22 && !j.getPoint()[Jumong.getX() + 1][Jumong.getY()].isWall()) {
 				Jumong.setX(Jumong.getX() + 1);
 				p.repaint();
 				setpanel3();
@@ -924,7 +915,7 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 				j.setHitPoints(j.getHitPoints() - 10 * x);
 			}
 		} else if (e.getKeyCode() == KeyEvent.VK_UP) {
-			if (Jumong.getY() > 0 && !j.getPoint()[Jumong.getX()][Jumong.getY() - 1].isIswall()) {
+			if (Jumong.getY() > 0 && !j.getPoint()[Jumong.getX()][Jumong.getY() - 1].isWall()) {
 				Jumong.setY(Jumong.getY() - 1);
 				p.repaint();
 				setpanel3();
@@ -937,7 +928,7 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 				j.setHitPoints(j.getHitPoints() - 10 * x);
 			}
 		} else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			if (Jumong.getY() < 22 && !j.getPoint()[Jumong.getX()][Jumong.getY() + 1].isIswall()) {
+			if (Jumong.getY() < 22 && !j.getPoint()[Jumong.getX()][Jumong.getY() + 1].isWall()) {
 				Jumong.setY(Jumong.getY() + 1);
 				p.repaint();
 				setpanel3();
@@ -1203,8 +1194,8 @@ public final class JumongFrame extends JFrame implements KeyListener, ActionList
 			Iterator it = j.inventory.iterator();
 			while (it.hasNext()) {
 				Item i = (Item) it.next();
-				if (i.name.equals("smallArrow") && enemynum > 0) {
-					enemynum--;
+				if (i.name.equals("smallArrow") && enemyNumber > 0) {
+					enemyNumber--;
 					i.use(j);
 					it.remove();
 				}

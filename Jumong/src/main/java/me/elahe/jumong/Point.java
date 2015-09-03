@@ -24,18 +24,18 @@ public class Point {
 	public ArrayList<Item> items;
 	int rand1, rand2;
 	Random random;
-	public ArrayList enemies;
-	private boolean iswall;
+	public ArrayList<Enemy> enemies;
+	private boolean isWall;
 	boolean destination;
 
 	public Point(int x, int y) {
 		gold = Math.abs(16 - x) + Math.abs(13 - y);
-		iswall = false;
+		isWall = false;
 		destination = false;
 		this.x = x;
 		this.y = y;
-		items = new ArrayList<Item>();
-		enemies = new ArrayList();
+		items = new ArrayList<>();
+		enemies = new ArrayList<>();
 	}
 
 
@@ -108,24 +108,10 @@ public class Point {
 	}
 
 	/**
-	 * @param x the x to set
-	 */
-	public void setX(int x) {
-		this.x = x;
-	}
-
-	/**
 	 * @return the y
 	 */
 	public int getY() {
 		return y;
-	}
-
-	/**
-	 * @param y the y to set
-	 */
-	public void setY(int y) {
-		this.y = y;
 	}
 
 	/**
@@ -136,23 +122,16 @@ public class Point {
 	}
 
 	/**
-	 * @param gold the gold to set
+	 * @return the isWall
 	 */
-	public void setGold(int gold) {
-		this.gold = gold;
+	public boolean isWall() {
+		return isWall;
 	}
 
 	/**
-	 * @return the iswall
+	 * @param wall the isWall to set
 	 */
-	public boolean isIswall() {
-		return iswall;
-	}
-
-	/**
-	 * @param iswall the iswall to set
-	 */
-	public void setIswall(boolean iswall) {
-		this.iswall = iswall;
+	public void setWall(boolean wall) {
+		this.isWall = wall;
 	}
 }

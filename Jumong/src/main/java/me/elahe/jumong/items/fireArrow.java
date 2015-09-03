@@ -31,13 +31,13 @@ public class fireArrow extends Item {
 //        }
 
 		if (Jumong.getX() > 0 && Jumong.getX() < 22 && Jumong.getY() > 0 && Jumong.getY() < 22) {
-			jumong.getPoint()[Jumong.getX() + 1][Jumong.getY()].setIswall(false);
+			jumong.getPoint()[Jumong.getX() + 1][Jumong.getY()].setWall(false);
 
-			jumong.getPoint()[Jumong.getX() - 1][Jumong.getY()].setIswall(false);
+			jumong.getPoint()[Jumong.getX() - 1][Jumong.getY()].setWall(false);
 
-			jumong.getPoint()[Jumong.getX()][Jumong.getY() - 1].setIswall(false);
+			jumong.getPoint()[Jumong.getX()][Jumong.getY() - 1].setWall(false);
 
-			jumong.getPoint()[Jumong.getX()][Jumong.getY() + 1].setIswall(false);
+			jumong.getPoint()[Jumong.getX()][Jumong.getY() + 1].setWall(false);
 		}
 	}
 }

@@ -55,22 +55,22 @@ public class Panel1 extends JPanel {
 		if (Jumong.getX() > 0 && Jumong.getY() > 0 && Jumong.getX() < 22 && Jumong.getY() < 22) {
 			g.setColor(Color.WHITE);
 
-			if (getJ().getPoint()[Jumong.getX() - 1][Jumong.getY()].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX() - 1][Jumong.getY()].isWall()) {
 				g.drawImage(wall, (Jumong.getX() - 1) * 30, Jumong.getY() * 30, 29, 29, null);
 			} else {
 				g.fillRect((Jumong.getX() - 1) * 30, Jumong.getY() * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX() + 1][Jumong.getY()].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX() + 1][Jumong.getY()].isWall()) {
 				g.drawImage(wall, (Jumong.getX() + 1) * 30, Jumong.getY() * 30, 29, 29, null);
 			} else {
 				g.fillRect((Jumong.getX() + 1) * 30, Jumong.getY() * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() - 1].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() - 1].isWall()) {
 				g.drawImage(wall, Jumong.getX() * 30, (Jumong.getY() - 1) * 30, 29, 29, null);
 			} else {
 				g.fillRect(Jumong.getX() * 30, 30 * (Jumong.getY() - 1), 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() + 1].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() + 1].isWall()) {
 				g.drawImage(wall, Jumong.getX() * 30, (Jumong.getY() + 1) * 30, 29, 29, null);
 			} else {
 				g.fillRect(Jumong.getX() * 30, (Jumong.getY() + 1) * 30, 29, 29);
@@ -78,17 +78,17 @@ public class Panel1 extends JPanel {
 		}
 		if (Jumong.getX() == 0 && Jumong.getY() != 0 && Jumong.getY() != 22) {
 			g.setColor(Color.WHITE);
-			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() + 1].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() + 1].isWall()) {
 				g.drawImage(wall, Jumong.getX() * 30, (Jumong.getY() + 1) * 30, 29, 29, null);
 			} else {
 				g.fillRect(Jumong.getX() * 30, (Jumong.getY() + 1) * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() - 1].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() - 1].isWall()) {
 				g.drawImage(wall, Jumong.getX() * 30, (Jumong.getY() - 1) * 30, 29, 29, null);
 			} else {
 				g.fillRect(Jumong.getX() * 30, (Jumong.getY() - 1) * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX() + 1][Jumong.getY()].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX() + 1][Jumong.getY()].isWall()) {
 				g.drawImage(wall, (Jumong.getX() + 1) * 30, (Jumong.getY()) * 30, 29, 29, null);
 			} else {
 				g.fillRect((Jumong.getX() + 1) * 30, (Jumong.getY()) * 30, 29, 29);
@@ -96,17 +96,17 @@ public class Panel1 extends JPanel {
 		}
 		if (Jumong.getX() == 22 && Jumong.getY() != 0 && Jumong.getY() != 22) {
 			g.setColor(Color.WHITE);
-			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() + 1].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() + 1].isWall()) {
 				g.drawImage(wall, Jumong.getX() * 30, (Jumong.getY() + 1) * 30, 29, 29, null);
 			} else {
 				g.fillRect(Jumong.getX() * 30, (Jumong.getY() + 1) * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() - 1].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() - 1].isWall()) {
 				g.drawImage(wall, Jumong.getX() * 30, (Jumong.getY() - 1) * 30, 29, 29, null);
 			} else {
 				g.fillRect(Jumong.getX() * 30, (Jumong.getY() - 1) * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX() - 1][Jumong.getY()].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX() - 1][Jumong.getY()].isWall()) {
 				g.drawImage(wall, (Jumong.getX() - 1) * 30, (Jumong.getY()) * 30, 29, 29, null);
 			} else {
 				g.fillRect((Jumong.getX() - 1) * 30, (Jumong.getY()) * 30, 29, 29);
@@ -115,17 +115,17 @@ public class Panel1 extends JPanel {
 		}
 		if (Jumong.getY() == 22 && Jumong.getX() != 0 && Jumong.getX() != 22) {
 			g.setColor(Color.WHITE);
-			if (getJ().getPoint()[Jumong.getX() + 1][Jumong.getY()].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX() + 1][Jumong.getY()].isWall()) {
 				g.drawImage(wall, (Jumong.getX() + 1) * 30, (Jumong.getY()) * 30, 29, 29, null);
 			} else {
 				g.fillRect((Jumong.getX() + 1) * 30, (Jumong.getY()) * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX() - 1][Jumong.getY()].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX() - 1][Jumong.getY()].isWall()) {
 				g.drawImage(wall, (Jumong.getX() - 1) * 30, (Jumong.getY()) * 30, 29, 29, null);
 			} else {
 				g.fillRect((Jumong.getX() - 1) * 30, (Jumong.getY()) * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() - 1].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() - 1].isWall()) {
 				g.drawImage(wall, (Jumong.getX()) * 30, (Jumong.getY() - 1) * 30, 29, 29, null);
 			} else {
 				g.fillRect(Jumong.getX() * 30, (Jumong.getY() - 1) * 30, 29, 29);
@@ -134,17 +134,17 @@ public class Panel1 extends JPanel {
 		}
 		if (Jumong.getY() == 0 && Jumong.getX() != 0 && Jumong.getX() != 22) {
 			g.setColor(Color.WHITE);
-			if (getJ().getPoint()[Jumong.getX() + 1][Jumong.getY()].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX() + 1][Jumong.getY()].isWall()) {
 				g.drawImage(wall, (Jumong.getX() + 1) * 30, (Jumong.getY()) * 30, 29, 29, null);
 			} else {
 				g.fillRect((Jumong.getX() + 1) * 30, (Jumong.getY()) * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX() - 1][Jumong.getY()].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX() - 1][Jumong.getY()].isWall()) {
 				g.drawImage(wall, (Jumong.getX() - 1) * 30, (Jumong.getY()) * 30, 29, 29, null);
 			} else {
 				g.fillRect((Jumong.getX() - 1) * 30, (Jumong.getY()) * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() + 1].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() + 1].isWall()) {
 				g.drawImage(wall, (Jumong.getX()) * 30, (Jumong.getY() + 1) * 30, 29, 29, null);
 			} else {
 				g.fillRect(Jumong.getX() * 30, (Jumong.getY() + 1) * 30, 29, 29);
@@ -153,12 +153,12 @@ public class Panel1 extends JPanel {
 		}
 		if (Jumong.getY() == 0 && Jumong.getX() == 0) {
 			g.setColor(Color.WHITE);
-			if (getJ().getPoint()[Jumong.getX() + 1][Jumong.getY()].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX() + 1][Jumong.getY()].isWall()) {
 				g.drawImage(wall, (Jumong.getX() + 1) * 30, (Jumong.getY()) * 30, 29, 29, null);
 			} else {
 				g.fillRect((Jumong.getX() + 1) * 30, (Jumong.getY()) * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() + 1].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() + 1].isWall()) {
 				g.drawImage(wall, Jumong.getX() * 30, (Jumong.getY() + 1) * 30, 29, 29, null);
 			} else {
 				g.fillRect(Jumong.getX() * 30, (Jumong.getY() + 1) * 30, 29, 29);
@@ -167,12 +167,12 @@ public class Panel1 extends JPanel {
 		}
 		if (Jumong.getY() == 22 && Jumong.getX() == 22) {
 			g.setColor(Color.WHITE);
-			if (getJ().getPoint()[Jumong.getX() - 1][Jumong.getY()].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX() - 1][Jumong.getY()].isWall()) {
 				g.drawImage(wall, (Jumong.getX() - 1) * 30, (Jumong.getY()) * 30, 29, 29, null);
 			} else {
 				g.fillRect((Jumong.getX() - 1) * 30, (Jumong.getY()) * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() - 1].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() - 1].isWall()) {
 				g.drawImage(wall, (Jumong.getX()) * 30, (Jumong.getY() - 1) * 30, 29, 29, null);
 			} else {
 				g.fillRect(Jumong.getX() * 30, (Jumong.getY() - 1) * 30, 29, 29);
@@ -180,12 +180,12 @@ public class Panel1 extends JPanel {
 		}
 		if (Jumong.getY() == 0 && Jumong.getX() == 22) {
 			g.setColor(Color.WHITE);
-			if (getJ().getPoint()[Jumong.getX() - 1][Jumong.getY()].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX() - 1][Jumong.getY()].isWall()) {
 				g.drawImage(wall, (Jumong.getX() - 1) * 30, (Jumong.getY()) * 30, 29, 29, null);
 			} else {
 				g.fillRect((Jumong.getX() - 1) * 30, (Jumong.getY()) * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() + 1].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() + 1].isWall()) {
 				g.drawImage(wall, (Jumong.getX()) * 30, (Jumong.getY() + 1) * 30, 29, 29, null);
 			} else {
 				g.fillRect(Jumong.getX() * 30, (Jumong.getY() + 1) * 30, 29, 29);
@@ -193,12 +193,12 @@ public class Panel1 extends JPanel {
 		}
 		if (Jumong.getY() == 22 && Jumong.getX() == 0) {
 			g.setColor(Color.WHITE);
-			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() - 1].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX()][Jumong.getY() - 1].isWall()) {
 				g.drawImage(wall, (Jumong.getX()) * 30, (Jumong.getY() - 1) * 30, 29, 29, null);
 			} else {
 				g.fillRect(Jumong.getX() * 30, (Jumong.getY() - 1) * 30, 29, 29);
 			}
-			if (getJ().getPoint()[Jumong.getX() + 1][Jumong.getY()].isIswall()) {
+			if (getJ().getPoint()[Jumong.getX() + 1][Jumong.getY()].isWall()) {
 				g.drawImage(wall, (Jumong.getX() + 1) * 30, (Jumong.getY()) * 30, 29, 29, null);
 			} else {
 				g.fillRect((Jumong.getX() + 1) * 30, (Jumong.getY()) * 30, 29, 29);

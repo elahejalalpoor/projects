@@ -204,13 +204,13 @@ public class Fight extends JFrame implements MouseListener, ItemListener, Action
 							}
 						}
 						if (Jumong.getX() > 0 && Jumong.getX() < 22 && Jumong.getY() > 0 && Jumong.getY() < 22) {
-							j.getPoint()[Jumong.getX() + 1][Jumong.getY()].setIswall(false);
+							j.getPoint()[Jumong.getX() + 1][Jumong.getY()].setWall(false);
 
-							j.getPoint()[Jumong.getX() - 1][Jumong.getY()].setIswall(false);
+							j.getPoint()[Jumong.getX() - 1][Jumong.getY()].setWall(false);
 
-							j.getPoint()[Jumong.getX()][Jumong.getY() - 1].setIswall(false);
+							j.getPoint()[Jumong.getX()][Jumong.getY() - 1].setWall(false);
 
-							j.getPoint()[Jumong.getX()][Jumong.getY() + 1].setIswall(false);
+							j.getPoint()[Jumong.getX()][Jumong.getY() + 1].setWall(false);
 						}
 						num++;
 						j.getInventory().remove(index);
