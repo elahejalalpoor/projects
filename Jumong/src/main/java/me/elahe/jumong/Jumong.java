@@ -67,7 +67,8 @@ public class Jumong implements Serializable {
 	private Point[][] point;
 	public HashMap hm;
 	private static int x;
-	private static int y, gold;
+	private static int y;
+	private static int gold;
 	public ArrayList<Item> inventory;
 	private int hitPoints;
 	private int energy;

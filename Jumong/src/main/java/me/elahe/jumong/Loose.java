@@ -17,7 +17,6 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,7 +26,7 @@ public class Loose extends JPanel {
 
 	public Loose() {
 		try {
-			gameOver = ImageIO.read(new File("why.jpg"));
+			gameOver = ImageIO.read(ClassLoader.getSystemResourceAsStream("why.jpg"));
 		} catch (IOException ex) {
 			Logger.getLogger(Loose.class.getName()).log(Level.SEVERE, null, ex);
 		}
@@ -35,9 +34,8 @@ public class Loose extends JPanel {
 	}
 
 	@Override
-
 	public void paint(Graphics g) {
-//        super.paint(g);
+		super.paint(g);
 		g.drawImage(gameOver, 0, 0, 400, 500, null);
 	}
 

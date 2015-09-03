@@ -15,27 +15,31 @@ package me.elahe.jumong;
 
 import javax.swing.*;
 
-public class Server {
+public class Server implements Runnable {
+	private Jumong jumong;
+	private JumongFrame jumongFrame;
+
 	public Server() {
-		Jumong jumong = new Jumong();
-		JumongFrame jumongFrame = new JumongFrame(jumong);
-		JFrame frame = new JFrame();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		while (true) {
-			if (jumong.getHitPoints() < 0 || jumong.getEnergy() < 0) {
-				jumongFrame.dispose();
-				frame.setVisible(false);
-				frame.setSize(1500, 720);
-				Loose l = new Loose();
-				frame.add(l);
-				l.repaint();
-				frame.setVisible(true);
-				break;
-			}
-		}
+		jumong = new Jumong();
+		jumongFrame = new JumongFrame(jumong);
 	}
 
 	public static void main(String[] args) {
-		new Server();
+		new Thread(new Server()).start();
+	}
+
+	@Override
+	public void run() {
+		while (true) {
+			if (jumong.getHitPoints() < 0 || jumong.getEnergy() < 0) {
+				jumongFrame.dispose();
+				JFrame looseFrame = new JFrame();
+				Loose loose = new Loose();
+				looseFrame.add(loose);
+				loose.repaint();
+				looseFrame.setVisible(true);
+				break;
+			}
+		}
 	}
 }
