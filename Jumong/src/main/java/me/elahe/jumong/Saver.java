@@ -11,10 +11,6 @@
 /**
  * @author Elahe Jalalpour
  */
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package me.elahe.jumong;
 
 import java.io.*;
@@ -22,9 +18,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * @author Elahe Jalalpoor
- */
 public class Saver implements Serializable {
 	private OutputStream output;
 	private Point[][] point;
