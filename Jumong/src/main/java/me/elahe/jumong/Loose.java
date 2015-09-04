@@ -30,6 +30,7 @@ public class Loose extends JPanel {
 		} catch (IOException ex) {
 			Logger.getLogger(Loose.class.getName()).log(Level.SEVERE, null, ex);
 		}
+		setPreferredSize(new Dimension(400, 500));
 
 	}
 

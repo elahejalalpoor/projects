@@ -34,11 +34,18 @@ public class Server implements Runnable {
 			if (jumong.getHitPoints() < 0 || jumong.getEnergy() < 0) {
 				jumongFrame.dispose();
 				JFrame looseFrame = new JFrame();
+				looseFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				Loose loose = new Loose();
-				looseFrame.add(loose);
+				looseFrame.setContentPane(loose);
+				looseFrame.setSize(loose.getPreferredSize());
 				loose.repaint();
 				looseFrame.setVisible(true);
 				break;
+			}
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
 		}
 	}
